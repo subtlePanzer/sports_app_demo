@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Students</title>
+</head>
+<body>
+    <h1>Student Administration</h1>
+
+    <section>
+        <h2>Add a student</h2>
+        <form id="add-student-form">
+            <label>First name: <input id="first_name" required></label><br>
+            <label>Last name: <input id="last_name" required></label><br>
+            <label>House (number): <input id="house" type="number" min="0"></label><br>
+            <label>Year level: <input id="year_level" type="number" min="0"></label><br>
+            <label>Sex (M/F): <input id="sex" maxlength="1"></label><br>
+            <button type="submit">Add Student</button>
+        </form>
+        <div id="add-result"></div>
+    </section>
+
+    <section>
+        <h2>Upload students (CSV)</h2>
+        <p>Expected headers: first_name,last_name,house,year_level,sex</p>
+        <input type="file" id="csv-file" accept=".csv"><br>
+        <button id="upload-csv">Upload CSV</button>
+        <div id="upload-result"></div>
+    </section>
+
+    <section>
+        <h2>Existing students</h2>
+        <div id="students-list">Loading...</div>
+    </section>
+
+    <script src="{{ url_for('static', filename='admin.js') }}"></script>
+</body>
+</html>
